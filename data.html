@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Data Science avec Python</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4faff;
+        }
+
+        /* HEADER */
+        header {
+            background: #1e90ff;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { margin: 0; }
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover { text-decoration: underline; }
+
+        /* PAGE TITLE */
+        .course-header {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid #1e90ff;
+        }
+        .course-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .course-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .course-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #1e90ff;
+        }
+
+        .course-section h3 {
+            margin-top: 0;
+            color: #1e90ff;
+        }
+
+        /* Code style */
+        pre {
+            background: #e8f2ff;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1e90ff;
+            color: white;
+            padding: 20px 40px;
+            margin-top: 40px;
+        }
+        footer h3 {
+            margin-top: 0;
+        }
+        .footer-section {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>EduLearn</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cours.html">Cours</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profil.html">Profil</a>
+        </nav>
+    </header>
+
+    <!-- PAGE TITLE -->
+    <div class="course-header">
+        <h2>Data Science — Python</h2>
+        <p>Un cours complet pour apprendre les bases et techniques essentielles de la Data Science en Python.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- INTRO -->
+        <div class="course-section">
+            <h3>Introduction à la Data Science</h3>
+            <p>
+                La Data Science combine les statistiques, la programmation et la visualisation pour analyser et interpréter les données.
+                Python est aujourd’hui le langage le plus populaire grâce à sa simplicité et ses puissantes bibliothèques.
+            </p>
+        </div>
+
+        <!-- CHAPTER 1 -->
+        <div class="course-section">
+            <h3>Chapitre 1 : Les bases de Python</h3>
+
+            <p>Python est très utilisé grâce à sa syntaxe simple :</p>
+
+            <pre>
+# Afficher un texte
+print("Bonjour Data Science !")
+
+# Créer une variable
+x = 10
+
+# Une liste
+data = [1, 5, 7, 9]
+
+# Une boucle
+for i in data:
+    print(i)
+            </pre>
+
+            <p>Vous devez maîtriser les variables, listes, dictionnaires, boucles et fonctions pour continuer.</p>
+        </div>
+
+        <!-- CHAPTER 2 -->
+        <div class="course-section">
+            <h3>Chapitre 2 : Manipulation des données avec Pandas</h3>
+
+            <p>Pandas est la bibliothèque principale pour analyser des tableaux de données.</p>
+
+            <pre>
+import pandas as pd
+
+# Charger un fichier CSV
+df = pd.read_csv("data.csv")
+
+# Afficher les 5 premières lignes
+print(df.head())
+
+# Informations générales
+print(df.info())
+
+# Sélection d'une colonne
+ages = df["Age"]
+
+# Moyenne d'une colonne
+print(df["Salaire"].mean())
+            </pre>
+
+            <p>Avec Pandas, vous pouvez nettoyer, trier, transformer et analyser vos datasets.</p>
+        </div>
+
+        <!-- CHAPTER 3 -->
+        <div class="course-section">
+            <h3>Chapitre 3 : Analyse statistique</h3>
+
+            <p>Python propose plusieurs outils statistiques :</p>
+
+            <pre>
+import numpy as np
+
+data = [10, 12, 9, 14, 18]
+
+print("Moyenne :", np.mean(data))
+print("Médiane :", np.median(data))
+print("Écart-Type :", np.std(data))
+            </pre>
+        </div>
+
+        <!-- CHAPTER 4 -->
+        <div class="course-section">
+            <h3>Chapitre 4 : Visualisation des données</h3>
+
+            <p>Matplotlib permet de faire des graphiques :</p>
+
+            <pre>
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+plt.plot(x, y)
+plt.title("Évolution des valeurs")
+plt.xlabel("Temps")
+plt.ylabel("Valeurs")
+plt.show()
+            </pre>
+
+            <p>Vous pouvez aussi utiliser Seaborn pour des graphiques plus stylisés.</p>
+        </div>
+
+        <!-- CHAPTER 5 -->
+        <div class="course-section">
+            <h3>Chapitre 5 : Introduction au Machine Learning</h3>
+
+            <p>Pour créer un modèle prédictif :</p>
+
+            <pre>
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Données d'entraînement
+X = np.array([[1], [2], [3], [4]])
+y = np.array([3, 6, 9, 12])
+
+# Créer le modèle
+model = LinearRegression()
+
+# Entraîner
+model.fit(X, y)
+
+# Prédire
+print(model.predict([[5]]))  # ≈ 15
+            </pre>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="course-section">
+            <h3>Mini Projet : Analyse complète d’un dataset</h3>
+
+            <p>Objectifs :</p>
+
+            <ul>
+                <li>Importer et nettoyer un dataset</li>
+                <li>Analyser les statistiques</li>
+                <li>Créer 2 graphiques</li>
+                <li>Construire un modèle de prédiction simple</li>
+            </ul>
+
+            <p>À la fin, vous devez produire un rapport avec les résultats obtenus.</p>
+        </div>
+
+        <!-- END -->
+        <div class="course-section">
+            <h3>Conclusion</h3>
+            <p>
+                Vous connaissez maintenant toutes les bases pour débuter en Data Science avec Python.
+                Continuez avec des projets réels pour progresser rapidement !
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email : support@edulearn.com</p>
+            <p>Téléphone : +228 00 00 00 00</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Nos réseaux sociaux</h3>
+            <p>Facebook • Instagram • LinkedIn • YouTube</p>
+        </div>
+
+        <p style="text-align:center;">© 2025 EduLearn - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

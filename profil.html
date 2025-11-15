@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - EduLearn</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            display: flex;
+            background: #f4f8fc;
+        }
+
+        /* SIDEBAR */
+        .sidebar{
+            width: 260px;
+            background: #1E3A8A;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+            position: fixed;
+        }
+
+        .sidebar h2{
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        .sidebar ul{
+            list-style: none;
+        }
+
+        .sidebar ul li{
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li:hover{
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* CONTENT */
+        .content{
+            margin-left: 260px;
+            padding: 30px;
+            width: calc(100% - 260px);
+        }
+
+        h1{
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1E3A8A;
+        }
+
+        /* PROFILE CARD */
+        .profile-card{
+            background: white;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-top{
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-top img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1E3A8A;
+        }
+
+        .profile-top h2{
+            margin-top: 15px;
+            color: #1E3A8A;
+        }
+
+        .profile-top p{
+            color: #444;
+        }
+
+        /* FORM */
+        form label{
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #1E3A8A;
+        }
+
+        form input{
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .btn-save{
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background: #1E3A8A;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-save:hover{
+            background: #2A4FB7;
+        }
+
+        @media(max-width: 700px){
+            .sidebar{
+                width: 200px;
+            }
+            .content{
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>EduLearn</h2>
+        <ul>
+            <li>📊 Tableau de bord</li>
+            <li>📘 Mes cours</li>
+            <li>📚 Cours disponibles</li>
+            <li>👤 Mon Profil</li>
+            <li>⚙️ Paramètres</li>
+            <li>🚪 Déconnexion</li>
+        </ul>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>Mon Profil</h1>
+
+        <div class="profile-card">
+
+            <div class="profile-top">
+                <img src="https://i.pravatar.cc/300" alt="Photo Profil">
+                <h2>John Doe</h2>
+                <p>Étudiant EduLearn</p>
+            </div>
+
+            <!-- FORMULAIRE -->
+            <form>
+                <label>Nom complet</label>
+                <input type="text" value="John Doe">
+
+                <label>Email</label>
+                <input type="email" value="johndoe@gmail.com">
+
+                <label>Numéro de téléphone</label>
+                <input type="text" value="+228 90 00 00 00">
+
+                <label>Mot de passe</label>
+                <input type="password" value="password123">
+
+                <button class="btn-save">Mettre à jour</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

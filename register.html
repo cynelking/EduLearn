@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - Connexion</title>
+    <title>EduLearn - Inscription</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -23,6 +23,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 20px 0;
         }
 
         body::before {
@@ -48,15 +49,15 @@
         }
 
         /* --- CONTAINER --- */
-        .login-wrapper {
+        .register-wrapper {
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 420px;
+            max-width: 500px;
             padding: 20px;
         }
 
-        .login-container {
+        .register-container {
             background: rgba(255, 255, 255, 0.95);
             padding: 50px 40px;
             border-radius: 20px;
@@ -64,7 +65,7 @@
             backdrop-filter: blur(10px);
         }
 
-        .login-header {
+        .register-header {
             text-align: center;
             margin-bottom: 30px;
         }
@@ -82,20 +83,20 @@
             color: white;
         }
 
-        .login-header h2 {
+        .register-header h2 {
             font-size: 28px;
             color: #333;
             margin-bottom: 8px;
         }
 
-        .login-header p {
+        .register-header p {
             font-size: 14px;
             color: #999;
         }
 
         /* --- FORM --- */
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 18px;
         }
 
         label {
@@ -119,7 +120,7 @@
             font-size: 16px;
         }
 
-        input {
+        input, select {
             width: 100%;
             padding: 12px 15px 12px 45px;
             border: 2px solid #e0e0e0;
@@ -127,9 +128,10 @@
             font-size: 15px;
             transition: 0.3s;
             background: #f8f9fa;
+            font-family: "Poppins", sans-serif;
         }
 
-        input:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: #667eea;
             background: white;
@@ -140,41 +142,60 @@
             color: #999;
         }
 
-        /* --- REMEMBER & FORGOT --- */
-        .form-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            font-size: 14px;
+        .form-group.full-width {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
-        .remember-me {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .form-group.full-width > div {
+            margin-bottom: 0;
         }
 
-        .remember-me input[type="checkbox"] {
+        .form-group.full-width .input-wrapper {
+            position: relative;
+        }
+
+        .form-group.full-width input {
+            padding: 12px 15px 12px 45px;
+        }
+
+        /* --- CHECKBOX --- */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
             width: 18px;
             height: 18px;
             cursor: pointer;
             padding: 0;
             accent-color: #667eea;
+            margin: 0;
         }
 
-        .forgot-password {
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .checkbox-group a {
             color: #667eea;
             text-decoration: none;
             transition: 0.3s;
         }
 
-        .forgot-password:hover {
+        .checkbox-group a:hover {
             color: #764ba2;
+            text-decoration: underline;
         }
 
         /* --- BUTTON --- */
-        .btn-login {
+        .btn-register {
             width: 100%;
             padding: 14px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -186,18 +207,15 @@
             cursor: pointer;
             transition: 0.3s;
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none; /* assure qu'il n'y ait pas d'underline si un lien est ajouté par erreur */
+            margin-top: 10px;
         }
 
-        .btn-login:hover {
+        .btn-register:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
         }
 
-        .btn-login:active {
+        .btn-register:active {
             transform: translateY(0);
         }
 
@@ -250,58 +268,72 @@
             transform: translateY(-2px);
         }
 
-        /* --- SIGNUP LINK --- */
-        .signup-link {
+        /* --- LOGIN LINK --- */
+        .login-link {
             text-align: center;
             margin-top: 25px;
             font-size: 14px;
             color: #666;
         }
 
-        .signup-link a {
+        .login-link a {
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
         }
 
-        .signup-link a:hover {
+        .login-link a:hover {
             color: #764ba2;
             text-decoration: underline;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 480px) {
-            .login-container {
+            .register-container {
                 padding: 35px 25px;
             }
 
-            .login-header h2 {
+            .register-header h2 {
                 font-size: 24px;
             }
 
-            .form-footer {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
+            .form-group.full-width {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="login-wrapper">
-        <div class="login-container">
-            <div class="login-header">
+    <div class="register-wrapper">
+        <div class="register-container">
+            <div class="register-header">
                 <div class="logo-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <h2>Bienvenue</h2>
-                <p>Connectez-vous à votre compte EduLearn</p>
+                <h2>Créer un compte</h2>
+                <p>Rejoignez EduLearn et commencez votre apprentissage</p>
             </div>
 
-            <!-- form: action updated to redirect to the dashboard (bord.html) -->
-            <form method="GET" action="bord.html">
+            <form method="POST" action="#">
+                <div class="form-group full-width">
+                    <div>
+                        <label for="firstname">Prénom</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="lastname">Nom</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastname" name="lastname" placeholder="Votre nom" required>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="email">Adresse Email</label>
                     <div class="input-wrapper">
@@ -311,23 +343,35 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Mot de passe</label>
+                    <label for="phone">Téléphone (optionnel)</label>
                     <div class="input-wrapper">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="+228 XXXXXXXX">
                     </div>
                 </div>
 
-                <div class="form-footer">
-                    <label class="remember-me">
-                        <input type="checkbox" name="remember" id="remember">
-                        <span>Se souvenir de moi</span>
-                    </label>
-                    <a href="password.html" class="forgot-password">Mot de passe oublié ?</a>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Min. 8 caractères" required>
+                    </div>
                 </div>
 
-                <!-- bouton de soumission propre -->
-                <button type="submit" class="btn-login" aria-label="Se connecter">Se connecter</button>
+                <div class="form-group">
+                    <label for="password-confirm">Confirmer le mot de passe</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password-confirm" name="password-confirm" placeholder="Confirmez votre mot de passe" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
+                </div>
+
+                <button type="submit" class="btn-register">S'inscrire</button>
 
                 <div class="divider">
                     <span>OU</span>
@@ -345,8 +389,8 @@
                     </button>
                 </div>
 
-                <div class="signup-link">
-                    Pas encore de compte ? <a href="register.html">S'inscrire gratuitement</a>
+                <div class="login-link">
+                    Vous avez déjà un compte ? <a href="login.html">Se connecter</a>
                 </div>
             </form>
         </div>

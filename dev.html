@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cours Développement Web - EduLearn</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background: #f4f8fc;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            background: #1E3A8A;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 26px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* CONTENT */
+        .content {
+            margin-left: 260px;
+            padding: 30px;
+            width: calc(100% - 260px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+                        url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover;
+            height: 250px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        /* COURSE CONTENT */
+        h2 {
+            margin-top: 30px;
+            color: #1E3A8A;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.7;
+            color: #444;
+            font-size: 16px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        pre {
+            background: #1E3A8A;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        @media(max-width: 700px){
+            .sidebar{
+                width: 200px;
+            }
+            .content{
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>EduLearn</h2>
+        <ul>
+            <li>📊 Tableau de bord</li>
+            <li>📘 Mes cours</li>
+            <li>📚 Cours disponibles</li>
+            <li>👤 Mon Profil</li>
+            <li>⚙️ Paramètres</li>
+            <li>🚪 Déconnexion</li>
+        </ul>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- HERO -->
+        <div class="hero">
+            <h1>Cours complet : Développement Web</h1>
+        </div>
+
+        <!-- SOMMAIRE -->
+        <div class="section">
+            <h2>📚 Sommaire du cours</h2>
+            <ul>
+                <li>Introduction au Développement Web</li>
+                <li>HTML : Structure d'une page web</li>
+                <li>CSS : Mise en forme</li>
+                <li>JavaScript : Dynamiser vos pages</li>
+                <li>Création d’un mini-projet</li>
+                <li>Hébergement d’un site web</li>
+            </ul>
+        </div>
+
+        <!-- INTRO -->
+        <div class="section">
+            <h2>🌐 1. Introduction</h2>
+            <p>
+                Le développement web consiste à créer des sites et applications accessibles via Internet.
+                On utilise principalement trois langages :
+            </p>
+            <ul>
+                <li><b>HTML</b> → structure</li>
+                <li><b>CSS</b> → style</li>
+                <li><b>JavaScript</b> → interactions</li>
+            </ul>
+        </div>
+
+        <!-- HTML COURSE -->
+        <div class="section">
+            <h2>📘 2. HTML — Structure d'une Page Web</h2>
+            <p>HTML (HyperText Markup Language) organise le contenu.</p>
+
+            <h3>Exemple simple :</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Ma première page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Bienvenue !&lt;/h1&gt;
+    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <h3>Balises importantes :</h3>
+            <ul>
+                <li>&lt;h1&gt; à &lt;h6&gt; → titres</li>
+                <li>&lt;p&gt; → paragraphes</li>
+                <li>&lt;img&gt; → images</li>
+                <li>&lt;a&gt; → liens</li>
+                <li>&lt;div&gt; → conteneurs</li>
+            </ul>
+        </div>
+
+        <!-- CSS COURSE -->
+        <div class="section">
+            <h2>🎨 3. CSS — Mise en forme</h2>
+            <p>CSS sert à styliser vos pages : couleurs, marges, positions, polices…</p>
+
+            <h3>Exemple :</h3>
+            <pre>
+body {
+    background: #f4f8fc;
+    font-family: Arial;
+}
+
+h1 {
+    color: #1E3A8A;
+}
+            </pre>
+
+            <h3>Principales propriétés :</h3>
+            <ul>
+                <li>color → couleur du texte</li>
+                <li>background → couleur du fond</li>
+                <li>padding / margin → espaces</li>
+                <li>border-radius → arrondis</li>
+                <li>display → positionnement</li>
+            </ul>
+        </div>
+
+        <!-- JAVASCRIPT COURSE -->
+        <div class="section">
+            <h2>⚡ 4. JavaScript — Rendre la page interactive</h2>
+            <p>JavaScript permet de dynamiser les pages.</p>
+
+            <h3>Exemple simple :</h3>
+            <pre>
+&lt;button onclick="saluer()"&gt;Clique-moi&lt;/button&gt;
+
+&lt;script&gt;
+function saluer() {
+    alert("Bonjour !");
+}
+&lt;/script&gt;
+            </pre>
+
+            <h3>Vous pouvez :</h3>
+            <ul>
+                <li>Créer des animations</li>
+                <li>Gérer des formulaires</li>
+                <li>Créer des jeux</li>
+                <li>Ajouter du contenu dynamiquement</li>
+            </ul>
+        </div>
+
+        <!-- MINI PROJECT -->
+        <div class="section">
+            <h2>🛠️ 5. Mini-Projet : Page Web Complète</h2>
+            <p>Nous allons créer une mini page web simple :</p>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        body { font-family: Arial; }
+        h1 { color: #1E3A8A; }
+        button {
+            padding: 10px;
+            background: #1E3A8A;
+            color: white;
+            border-radius: 6px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Ma page Web&lt;/h1&gt;
+    &lt;button onclick="alert('Bienvenue !')"&gt;Clique-moi&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+        </div>
+
+        <!-- HOSTING -->
+        <div class="section">
+            <h2>🚀 6. Héberger un Site Web</h2>
+            <p>Pour mettre ton site en ligne :</p>
+
+            <ul>
+                <li>Utilise <b>GitHub Pages</b> (gratuit)</li>
+                <li>Ou Netlify</li>
+                <li>Ou Hostinger (payant)</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
