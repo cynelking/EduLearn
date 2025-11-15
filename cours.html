@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Cours</title>
+
+    <style>
+
+        /* --- GLOBAL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+        }
+
+        /* Image spécifique pour la page Cours */
+        .hero-cours {
+            background-image: url("https://i.postimg.cc/FzXMdLFN/education-banner.jpg");
+        }
+
+        /* --- COURSES SECTION --- */
+        .courses-section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .courses-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .course-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .course-card p {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0056cc;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1c1c1c;
+            color: white;
+            padding: 50px 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ddd;
+            font-size: 15px;
+        }
+
+        .social-links {
+            list-style: none;
+        }
+
+        .social-links li a {
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        .social-links li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">EduLearn</div>
+            <ul class="nav-links">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="cours.html" class="active">Cours</a></li>
+                <li><a href="login.html">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero hero-cours">
+        <div class="hero-content">
+            <h1>Nos Cours</h1>
+            <p>Développez vos compétences grâce à nos cours de qualité.</p>
+        </div>
+    </section>
+
+    <!-- SECTION COURS -->
+    <section class="courses-section">
+        <h2>Catalogue des Cours</h2>
+
+        <div class="courses-container">
+
+            <div class="course-card">
+                <h3>Développement Web</h3>
+                <p>HTML, CSS, JavaScript, projets pratiques…</p>
+                <a href="#" class="btn">Voir plus</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Design UI/UX</h3>
+                <p>Figma, maquettes, couleurs, UX patterns…</p>
+                <a href="#" class="btn">Voir plus</a>
+            </div>
+
+            <div class="course-card">
+                <h3>Base de Données</h3>
+                <p>MySQL, SQL, modélisation, exercices réels…</p>
+                <a href="#" class="btn">Voir plus</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>EduLearn est une plateforme dédiée à l’apprentissage en ligne.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email : support@edulearn.com</p>
+                <p>Téléphone : +228 90 00 00 00</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Nos réseaux sociaux</h3>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">© 2025 EduLearn - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

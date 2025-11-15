@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Apprendre facilement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* --- NAVBAR --- */
+        header{
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo{
+            font-size: 26px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        nav a{
+            margin-left: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover{
+            color: #3b82f6;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero{
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            background: linear-gradient(to right, #e0edff, #f5f7fa);
+        }
+
+        .hero-text{
+            max-width: 480px;
+        }
+
+        .hero-text h1{
+            font-size: 48px;
+            line-height: 1.2;
+            color: #1e40af;
+        }
+
+        .hero-text p{
+            margin: 20px 0;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .btn{
+            display: inline-block;
+            padding: 14px 26px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn:hover{
+            background: #1e3a8a;
+        }
+
+        .hero-img img{
+            width: 480px;
+            border-radius: 16px;
+        }
+
+        /* --- SECTION COURS --- */
+        .courses{
+            padding: 60px;
+            text-align: center;
+        }
+
+        .courses h2{
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .course-cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card{
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card h3{
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about{
+            padding: 60px;
+            background: white;
+            margin-top: 40px;
+        }
+
+        .about-container{
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about h2{
+            font-size: 36px;
+            text-align: center;
+            color: #1e40af;
+            margin-bottom: 40px;
+        }
+
+        .about-content{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .about-item{
+            padding: 25px;
+            background: #f5f7fa;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .about-item h3{
+            color: #1e40af;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .about-item p{
+            color: #555;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .values-list{
+            list-style: none;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .values-list li{
+            margin-bottom: 12px;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+
+        .values-list li:before{
+            content: "✓ ";
+            color: #3b82f6;
+            font-weight: bold;
+            margin-left: -20px;
+            margin-right: 10px;
+        }
+
+        /* --- CONTACT FORM SECTION --- */
+        .contact{
+            padding: 60px;
+            background: #f5f7fa;
+        }
+
+        .contact-container{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact h2{
+            font-size: 36px;
+            text-align: center;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+
+        .contact > p{
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .form-group{
+            margin-bottom: 20px;
+        }
+
+        .form-group label{
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea{
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus{
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-group textarea{
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group.full-width{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group.full-width > div{
+            margin-bottom: 0;
+        }
+
+        .submit-btn{
+            display: inline-block;
+            width: 100%;
+            padding: 14px 26px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover{
+            background: #1e3a8a;
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        footer{
+            background: #1e3a8a;
+            padding: 40px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer .footer-content{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        footer h3{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        footer a{
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        footer a:hover{
+            color: #ffffff;
+        }
+
+        .social-links{
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transition: 0.3s;
+            margin: 0;
+        }
+
+        .social-links a:hover{
+            background: #3b82f6;
+            transform: scale(1.1);
+        }
+
+        .social-links i{
+            font-size: 18px;
+            color: white;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px){
+            .hero{
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-img img{
+                width: 300px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">EduLearn</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="cours.html">Cours</a>
+            <a href="#" class="btn">Se connecter</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Apprenez facilement, à votre rythme</h1>
+            <p>EduLearn vous propose des cours modernes, simples et accessibles pour vous aider à développer vos compétences et atteindre vos objectifs.</p>
+            <a href="#" class="btn">Commencer maintenant</a>
+        </div>
+
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1581091870620-fd1ca04f0952?auto=format&fit=crop&w=900&q=60" alt="Learning Image">
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses">
+        <h2>Nos cours populaires</h2>
+        <p>Découvrez des formations adaptées à tous les niveaux.</p>
+
+        <div class="course-cards">
+            <div class="card">
+                <h3>Développement Web</h3>
+                <p>Apprenez HTML, CSS, JavaScript, React et plus.</p>
+            </div>
+
+            <div class="card">
+                <h3>Data Science</h3>
+                <p>Analyse de données, Python, Machine Learning.</p>
+            </div>
+
+            <div class="card">
+                <h3>Design UI/UX</h3>
+                <p>Maîtrisez le design moderne et les outils pro.</p>
+            </div>
+
+            <div class="card">
+                <h3>Marketing Digital</h3>
+                <p>Boostez votre présence en ligne et vos ventes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-container">
+            <h2>À propos de nous</h2>
+            
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>Qui sommes-nous ?</h3>
+                    <p>EduLearn est une plateforme d'apprentissage en ligne fondée en 2025, dédiée à rendre l'éducation accessible à tous. Notre équipe est composée de formateurs, de développeurs et de designers passionnés par la transmission de connaissances. Nous croyons que chacun mérite une chance d'apprendre et de progresser, peu importe son niveau ou son contexte.</p>
+                </div>
+
+                <div class="about-item">
+                    <h3>Notre mission</h3>
+                    <p>Notre mission est de fournir des formations de qualité, modernes et accessibles à un prix abordable. Nous nous engageons à créer un environnement d'apprentissage bienveillant où chaque apprenant peut se développer à son propre rythme. Grâce à nos cours interactifs et nos instructeurs expérimentés, nous aidons des milliers de personnes à atteindre leurs objectifs professionnels et personnels.</p>
+                </div>
+
+                <div class="about-item">
+                    <h3>Nos valeurs</h3>
+                    <ul class="values-list">
+                        <li><strong>Accessibilité :</strong> Nous rendons la formation accessible à tous, peu importe le budget ou la situation géographique.</li>
+                        <li><strong>Qualité :</strong> Nous proposons des cours créés par des experts, avec un contenu à jour et pertinent.</li>
+                        <li><strong>Innovation :</strong> Nous utilisons les dernières technologies pour améliorer l'expérience d'apprentissage.</li>
+                        <li><strong>Bienveillance :</strong> Nous créons une communauté solidaire où l'entraide et le respect sont prioritaires.</li>
+                        <li><strong>Transparence :</strong> Nous sommes honnêtes sur nos offres et engagements envers nos utilisateurs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Contactez-nous</h2>
+            <p>Vous avez des questions ? N'hésitez pas à nous contacter en remplissant le formulaire ci-dessous.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group full-width">
+                    <div>
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+
+
+            <div>
+                <h3>Contact</h3>
+                <a href="mailto:intelligencecelebre@gmail.com">intelligencecelebre@gmail.com</a>
+                <a href="#">Téléphone: +228 96 29 20 39</a>
+                <a href="#">Formulaire de contact</a>
+            </div>
+
+            <div>
+                <h3>Nos réseaux sociaux</h3>
+                <div class="social-links">
+                    <a href="https://web.facebook.com/herve.soon.2025" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/22996292039" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2025 EduLearn — Tous droits réservés.
+        </div>
+    </footer>
+
+</body>
+</html>
